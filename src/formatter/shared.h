@@ -8,13 +8,23 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <sys/types.h>
-
+#include <sys/stat.h>
 const int SECTOR_SIZE = 512;
 
 struct blockdata
 {
     uint16_t dat[256];
 };
+
+uint32_t imgSize(const char* imagePath)
+{
+    struct stat file_stat;
+    if (stat(imagePath, &file_stat) == 0) {
+        return (uint32_t)file_stat.st_size;
+    } else {
+        perror("Failed to get file size");
+    }
+}
 
 blockdata readBlock(const char* imagePath, uint64_t sectorNumber)
 {
