@@ -94,7 +94,7 @@ void metadata(const char* img)
         dat.dat[i] = 0;
     }
 
-    for (int i = 0; i < imgSize; i++)
+    for (int i = 1; i < imgsize; i++)
     {
         writeBlock(img, dat, i);
     }
