@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <iostream>
 
-#include "shared.h"
+#include "shared.hpp"
 
 void metadata(const char* img)
 {

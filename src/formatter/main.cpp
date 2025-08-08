@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <cstring>
 
-#include "help.h"
-#include "metadata.h"
+#include "help.hpp"
+#include "metadata.hpp"
 
 int main(int argc, char *argv[])
 {
