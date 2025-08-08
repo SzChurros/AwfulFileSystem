@@ -94,10 +94,14 @@ void metadata(const char* img)
         dat.dat[i] = 0;
     }
 
+    printf("\033[?25l");
+
     for (int i = 1; i < imgsize; i++)
     {
         writeBlock(img, dat, i);
+        printf("formatting %0.1f%%; %i/%i\r", (float)i / imgsize * 100, i, imgsize);
     }
+    printf("done!                                   \033[?25h\n");
 }
 
 #endif
