@@ -58,6 +58,11 @@ void metadata(const char* img)
         return;
     const char* statictext = "awfulfilesystemmadeforszczosspecificallypleasedontuseitanywhereelse\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0";
 
+    for (int i = 0; i < 256; i++)
+    {
+        metadata.dat[i] = 0;
+    }
+
     for (int i = 0; i < 48; i++)
     {
         uint16_t word = (statictext[i * 2 + 1] << 8) | statictext[i * 2]; 
@@ -81,6 +86,18 @@ void metadata(const char* img)
     metadata.dat[51] = w1;
 
     writeBlock(img, metadata, 0);
+
+    blockdata dat;
+
+    for (int i = 0; i < 256; i++)
+    {
+        dat.dat[i] = 0;
+    }
+
+    for (int i = 0; i < imgSize; i++)
+    {
+        writeBlock(img, dat, i);
+    }
 }
 
 #endif
