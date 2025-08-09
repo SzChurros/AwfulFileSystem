@@ -1,22 +1,35 @@
 #include "filesystem.h"
 
-struct fileMetaStructure defFileMetaStructure()
+void defFileMetaStructure(struct *fileMetaStructure ptr)
 {
-    struct fileMetaStructure ret;
+    ptr->perm = 0;
+    ptr->creationTime = 0;
+    ptr->modifyTime = 0;
 
-    ret.perm = 0;
-    ret.creationTime = 0;
-    ret.modifyTime = 0;
-
-    for (int i = 0; i < 109; i++)
+    for (int i = 0; i < 117; i++)
     {
-        ret.ptr[i] = 0;
+        ptr->ptr[i] = 0;
     }
 
-    for (int i = 0; i < 64; i++)
+    for (int i = 0; i < 32; i++)
     {
         ret.name = 0;
     }
-
-    return ret;
 }
+
+void defFileMetaStructure(struct *folderMetaStructure ptr)
+{
+    ptr->creationTime = 0;
+    ptr->modifyTime = 0;
+
+    for (int i = 0; i < 117; i++)
+    {
+        ptr->ptr[i] = 0;
+    }
+
+    for (int i = 0; i < 32; i++)
+    {
+        ptr->name = 0;
+    }
+}
+

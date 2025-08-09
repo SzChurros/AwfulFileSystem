@@ -36,18 +36,11 @@ void metadata(const char* img)
             std::cout << std::endl;
         }
     }
-
-    uint16_t startaddrhi = metadata.dat[48];
-    uint16_t startaddrlo = metadata.dat[49];
-
-    uint32_t startaddr = (startaddrlo << 16) | startaddrhi;
-
-    uint16_t sihi = metadata.dat[50];
-    uint16_t silo = metadata.dat[51];
+    uint16_t sihi = metadata.dat[48];
+    uint16_t silo = metadata.dat[49];
 
     uint32_t si = (silo << 16) | sihi;
 
-    printf("\nData Start Block Addr: %i\n", startaddr);
     printf("Size: %i (sectors)\n", si);
 
     printf("Continue? [y/n]: ");
@@ -69,21 +62,17 @@ void metadata(const char* img)
 
         metadata.dat[i] = word;
     }
-
-    uint32_t fatSize = 8192;
+    
     uint32_t imgsize = imgSize(img) / 512;
 
-    uint16_t w0 = fatSize & 0xFFFF;
-    uint16_t w1 = (fatSize >> 16) & 0xFFFF;
-
-    metadata.dat[48] = w0;
-    metadata.dat[49] = w1;
+    uint16_t w0;
+    uint16_t w1;
 
     w0 = imgsize & 0xFFFF;
     w1 = (imgsize >> 16) & 0xFFFF;
 
-    metadata.dat[50] = w0;
-    metadata.dat[51] = w1;
+    metadata.dat[48] = w0;
+    metadata.dat[49] = w1;
 
     writeBlock(img, metadata, 0);
 

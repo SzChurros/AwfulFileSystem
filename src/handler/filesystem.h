@@ -9,13 +9,29 @@ struct fileMetaStructure
     uint32 creationTime; // word 2-3
     uint32 modifyTime; //   word 4-5
 
-    uint32 ptr[109]; //     word 6-222
+    uint32 ptr[117]; //     word 6-238
 
-    int8 name [64]; //      word 223-255
+    int8 name [32]; //      word 239-255
 };
 
-struct fileMetaStructure defFileMetaStructure();
+struct folderMetaStructure
+{
+    uint32 creationTime; // word 2-3
+    uint32 modifyTime; //   word 4-5
 
-getFileData(uint32 ptr);
+    uint32 ptr[117]; //     word 6-238
+
+    int8 name [32]; //      word 239-255
+};
+
+struct sector
+{
+    uint16 dat[256];
+};
+
+void defFileMetaStructure(struct fileMetaStructure);
+boid defFileMetaStructure(struct folderMetaStructure);
+
+struct folderMetaStructure getFolderData(struct sector);
 
 #endif
