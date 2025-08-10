@@ -17,7 +17,7 @@ sudo pacman -Sy git gcc qt5-base qt5-tools
 
 ```bash
 git clone https://github.com/SzChurros/AwfulFileSystem.git
-cd SzCzOs
+cd AwfulFileSystem
 ```
 
 ### Building
