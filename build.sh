@@ -13,9 +13,12 @@ echo "Created build folder structure..."
 
 # ---- Compile ----
 g++ -static -c src/formatter/main.cpp \
-    -o build/main.o
+    -o build/fmain.o
+g++ -static -c src/filemanager/main.cpp \
+    -o build/fmmain.o
 echo Compiled...
 
 # ---- Link ----
-g++ build/main.o -o build/bin/mkfs.szczafs
+g++ build/fmain.o -o build/bin/mkfs.szczafs
+g++ build/fmmain.o -o build/bin/szczafsexplo
 echo Linked...Done!
