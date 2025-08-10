@@ -8,7 +8,7 @@ rm -rf "$BUILD_DIR" || exit 1
 echo "Removed old build dir..."
 
 # ---- Setup ----
-mkdir -p "$BUILD_DIR"/bin || exit 1
+mkdir -p "$BUILD_DIR"{bin,mkfs,szczafsexplor} || exit 1
 echo "Created build folder structure..."
 
 # ---- Compile ----
@@ -19,6 +19,6 @@ g++ -c src/filemanager/main.cpp \
 echo Compiled...
 
 # ---- Link ----
-g++ build/fmain.o -o build/bin/mkfs.szczafs
-g++ build/fmmain.o -o build/bin/szczafsexplo
+g++ build/mkfs/main.o -o build/bin/mkfs.szczafs
+g++ build/szczafsexplor/main.o -o build/bin/szczafsexplo
 echo Linked...Done!
