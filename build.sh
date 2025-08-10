@@ -14,7 +14,7 @@ echo "Created build folder structure..."
 # ---- Compile ----
 g++ -static -c src/formatter/main.cpp \
     -o build/fmain.o
-g++ -static -c src/filemanager/main.cpp \
+g++ -c src/filemanager/main.cpp \
     -o build/fmmain.o
 echo Compiled...
 

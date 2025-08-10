@@ -10,7 +10,7 @@ as the name says
 ### Packages
 
 ```bash
-sudo pacman -Sy git gcc qt5-base qt5-tools
+sudo pacman -Sy git gcc
 ```
 
 ### Downloading the source code
