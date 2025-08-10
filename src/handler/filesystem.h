@@ -29,9 +29,10 @@ struct sector
     uint16 dat[256];
 };
 
-void defFileMetaStructure(struct fileMetaStructure);
-boid defFileMetaStructure(struct folderMetaStructure);
+void defFileMetaStructure(struct *fileMetaStructure ptr);
+void defFolderMetaStructure(struct *folderMetaStructure ptr);
 
-struct folderMetaStructure getFolderData(struct sector);
+void getFileData(struct *sector sect, struct *fileMetaStructure ptr);
+void getFolderData(struct *sector sect, struct *folderMetaStructure ptr);
 
 #endif
