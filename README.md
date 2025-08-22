@@ -13,6 +13,8 @@ as the name says
 sudo pacman -Sy git gcc
 ```
 
+Also building now requires brik that can be found <a href="" target="_blank">here</a>  
+
 ### Downloading the source code
 
 ```bash
@@ -23,13 +25,14 @@ cd AwfulFileSystem
 ### Building
 
 ```bash
-./build.sh
+brik formatter.cfg
+brik explorer.cfg
 ./disk.sh
 ```
 
 ### Running
  
-executables are in `build/bin/`
+executables are in `bin/`
 
 # Extra
 
