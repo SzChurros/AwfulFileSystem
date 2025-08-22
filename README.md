@@ -13,7 +13,7 @@ as the name says
 sudo pacman -Sy git gcc
 ```
 
-Also building now requires brik that can be found <a href="" target="_blank">here</a>  
+Also building now requires brik that can be found <a href="https://github.com/SzChurros/brik" target="_blank">here</a>  
 
 ### Downloading the source code
 
